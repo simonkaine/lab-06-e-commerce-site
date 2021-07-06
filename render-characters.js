@@ -1,4 +1,5 @@
 export function renderCharacter(character) {
+    
     const characterLI = document.createElement('li');
     const characterH3 = document.createElement('h3');
     characterH3.textContent = character.name;

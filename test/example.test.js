@@ -1,18 +1,27 @@
-// IMPORT MODULES under test here:
-// import { example } from '../example.js';
+import { renderCharacter } from '../render-characters.js';
 
 const test = QUnit.test;
 
-test('time to test a function', (expect) => {
+test('Test that passes a product to a function', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = true;
+
+    const expected = `<li><h3>Mario</h3><img src="./assets/mario.png" alt="Mario"><span>$99</span><span>Super Mario bros</span><button>BUY ME</button></li>`;
     
+    const mario = {
+        id: 'mario',
+        name: 'Mario',
+        image: 'mario.png',
+        description: "It's a me, Mario!",
+        category: 'Super Mario bros',
+        price: 99.00
+    };
+
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = true;
+    const actual = renderCharacter(mario);
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    expect.equal(actual.outerHTML, expected);
 });

@@ -11,7 +11,7 @@ const data = {
     id: 'data',
     name: 'Data',
     image: 'data.png',
-    description: "I have no culture of my own.",
+    description: 'I have no culture of my own.',
     category: 'Star Trek',
     price: 100.00
 };
