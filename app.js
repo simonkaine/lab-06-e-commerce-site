@@ -1,9 +1,12 @@
-// import functions and grab DOM elements
-import { renderCharcter } from './render-characters.js';
-// initialize state
+import characters from './characters.js';
+import { renderCharacter } from './render-characters.js';
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const charactersUL = document.getElementById('characters');
+
+for (let character of characters) {
+    const characterLI = renderCharacter(character);
+    charactersUL.appendChild(characterLI);
+}
+
+
 
