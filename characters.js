@@ -19,7 +19,7 @@ const data = {
 const donkeyKong = {
     id: 'donkey-kong',
     name: 'Donkey Kong',
-    image: 'donkeyKong.png',
+    image: 'donkeykong.png',
     description: 'Banana slamma!!',
     category: 'Donkey Kong',
     price: 95.00
