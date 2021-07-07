@@ -1,5 +1,5 @@
 import { renderCharacter } from '../render-characters.js';
-import { findById, calcItemTotal } from '../utils.js';
+import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -65,4 +65,26 @@ test('test for calculation', (expect) => {
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
+});
+
+test('test for DOM render', (expect) => {
+    
+    const mario = {
+        id: 1,
+        name: 'Mario',
+        image: 'mario.png',
+        description: "It's a me, Mario!",
+        category: 'Super Mario bros',
+        price: 99
+    };
+
+    const cart = 
+        { id: 1, qty: 2 };
+   
+    const expected = `<tr><td>Mario</td><td>$99.00</td><td>2</td><td>$198.00</td></tr>`;
+
+    const dom = renderTableRow(mario, cart);
+    const actual = dom.outerHTML;
+
+    expect.equal(actual, expected);
 });

@@ -4,7 +4,7 @@ const mario = {
     image: 'mario.png',
     description: "It's a me, Mario!",
     category: 'Super Mario bros',
-    price: 99.00
+    price: 99
 };
 
 const data = {
