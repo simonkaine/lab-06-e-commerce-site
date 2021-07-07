@@ -28,15 +28,15 @@ const donkeyKong = {
 const earthwormJim = {
     id: 'earthworm-jim',
     name: 'Eartworm Jim',
-    image: 'earthworm-jim.png',
+    image: 'earthwormJim.png',
     description: 'Groovy!',
     category: 'Earthworm Jim',
     price: 90.00
 };
 
 const ghost = {
-    id: 'ghost',
-    name: 'Ghost',
+    id: 'boos',
+    name: 'Boos',
     image: 'ghost.png',
     description: 'BOO!',
     category: 'Super Mario bros',
