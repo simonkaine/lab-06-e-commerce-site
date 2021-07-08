@@ -20,3 +20,6 @@ export function addItemToCart(itemId) {
     localStorage.setItem('CART', JSON.stringify(cart));
 }
 
+export function clearButton() {
+    localStorage.removeItem('CART');
+}
