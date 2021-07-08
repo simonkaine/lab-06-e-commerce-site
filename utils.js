@@ -5,7 +5,11 @@ export function findById(arrayItem, idItem) {
         }
     }
 }
-//  do i want arrayItem qty? idItem or total?
+
+export function calcLineTotal(quantity, price) {
+    return quantity * price;
+}
+
 export function calcItemTotal(arrayItem, idItem) {
     let total = 0;
     for (let item of idItem) {
@@ -14,6 +18,16 @@ export function calcItemTotal(arrayItem, idItem) {
     }
     return total;
 }
+
+// export function calcOrderTotal(cartArray, productsArray) {
+//     let grandTotal = 0;
+//     for (let item of cartArray) {
+//         const totalCharacters = findById(item.id, productsArray);
+//         const CalcLineTotal = calcItemTotal(totalCharacters, item.id);
+//         grandTotal += CalcLineTotal.price * item.qty;
+//     }
+//     return grandTotal;
+// }
 
 export function toUSD(number) {
     return number.toLocaleString(
