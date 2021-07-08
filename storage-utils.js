@@ -7,6 +7,7 @@ export function getCart() {
 }
 
 export function addItemToCart(itemId) {
+    
     const cart = getCart();
     const item = findById(cart, itemId);
 
