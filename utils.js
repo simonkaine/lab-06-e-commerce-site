@@ -21,7 +21,7 @@ export function toUSD(number) {
 }
 
 export function renderTableRow(arrayItem, idItem){
-console.log(idItem);
+
     const tableRow = document.createElement('tr');
 
     const tableDataName = document.createElement('td');

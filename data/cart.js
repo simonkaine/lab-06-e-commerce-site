@@ -1,9 +1,7 @@
 import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
 import characters from '../characters.js';
-import { renderCharacter } from '../render-characters.js';
 
 const tableBody = document.getElementById('tb-section01');
-console.log(tableBody);
 
 const cart = [
     { id: 1, qty: 1 },
@@ -18,7 +16,6 @@ const cart = [
 for (let item of cart) {
     const character = findById(characters, item.id);
     const tr = renderTableRow(character, item);
-    console.log(tr);
     tableBody.appendChild(tr);
 } 
 
