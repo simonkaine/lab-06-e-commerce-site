@@ -13,7 +13,7 @@ const data = {
     image: 'data.png',
     description: 'I have no culture of my own.',
     category: 'Star Trek',
-    price: 100.00
+    price: 100
 };
 
 const donkeyKong = {
@@ -22,7 +22,7 @@ const donkeyKong = {
     image: 'donkeykong.png',
     description: 'Banana slamma!!',
     category: 'Donkey Kong',
-    price: 95.00
+    price: 95
 };
 
 const earthwormJim = {

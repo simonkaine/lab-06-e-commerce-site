@@ -1,5 +1,5 @@
 import { renderCharacter } from '../render-characters.js';
-import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
+import { findById, calcItemTotal, renderTableRow } from '../utils.js';
 
 const test = QUnit.test;
 
