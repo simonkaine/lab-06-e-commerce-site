@@ -31,7 +31,7 @@ const earthwormJim = {
     image: 'earthwormJim.png',
     description: 'Groovy!',
     category: 'Earthworm Jim',
-    price: 90.00
+    price: 90
 };
 
 const ghost = {
@@ -40,7 +40,7 @@ const ghost = {
     image: 'ghost.png',
     description: 'BOO!',
     category: 'Super Mario bros',
-    price: 77.00
+    price: 77
 };
 
 const scorpion = {
@@ -49,7 +49,7 @@ const scorpion = {
     image: 'scorpion.png',
     description: 'Get over here!',
     category: 'Mortal Kombat',
-    price: 95.00
+    price: 95
 };
 
 const subZero = {
@@ -58,7 +58,7 @@ const subZero = {
     image: 'sub-zero.png',
     description: 'I am Sub-Zero, not Captain Cold!',
     category: 'Mortal Kombat',
-    price: 95.00
+    price: 95
 };
 
 const characters = [
