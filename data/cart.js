@@ -38,14 +38,14 @@ clearBtn.addEventListener('click', () => {
 });
 
 placeOrderBtn.addEventListener('click', () => {
-    alert('Place order, click OK.');
+    const cart = getCart();
+    const stringCart = JSON.stringify(cart, true, 2);
+    const cartRender = calcItemTotal(characters, cart);
+    const cartTotal = toUSD(cartRender);
+    alert(stringCart + `Your total is: ${cartTotal}`);
     clearButton();
     window.location.href = '../index.html';
-    
-
 });
-
-
 
 
 
