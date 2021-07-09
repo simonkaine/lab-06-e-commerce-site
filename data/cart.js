@@ -40,7 +40,7 @@ clearBtn.addEventListener('click', () => {
 placeOrderBtn.addEventListener('click', () => {
     const cart = getCart();
     const stringCart = JSON.stringify(cart, true, 2);
-    const cartRender = calcItemTotal(characters, cart);
+    const cartRender = calcOrderTotal(characters, cart);
     const cartTotal = toUSD(cartRender);
     alert(stringCart + `Your total is: ${cartTotal}`);
     clearButton();
