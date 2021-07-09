@@ -1,4 +1,4 @@
-import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
+import { findById, calcOrderTotal, renderTableRow, toUSD } from '../utils.js';
 import characters from '../characters.js';
 import { getCart, clearButton } from '../storage-utils.js';
 
@@ -20,7 +20,7 @@ function renderCart() {
     }
     
     const totalDom = document.getElementById('order-total');
-    const total = calcItemTotal(characters, cart);
+    const total = calcOrderTotal(characters, cart);
 
     if (total <= 0) {
         placeOrderBtn.disabled = true;
