@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
     <title>Cart</title>
 </head>
 <body>
@@ -12,27 +13,30 @@
         <a href="../">Home</a>
     </header>
 
-    <table>
-        <thead>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-        </thead>
-        <tbody id="tb-section01">
-   
-        </tbody>
-        <tfoot>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>Order Total:</td>
-                <td id="order-total">Calcuated</td>
-            </tr>
-        </tfoot>
-
-    <button id="place-order" class="hidden">Place Order</button>
-    <button id='clear'>Clear All!</button>
+    <main>
+        <table>
+            <thead>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </thead>
+            <tbody id="tb-section01">
+       
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Order Total:</td>
+                    <td id="order-total">Calcuated</td>
+                </tr>
+            </tfoot>
+    
+        <button id="place-order" class="hidden">Place Order</button>
+        <button id='clear'>Clear All!</button>
+    </main>
+    
 
     <script src="./cart.js" type="module"></script>
 </body>
