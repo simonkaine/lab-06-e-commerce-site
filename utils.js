@@ -1,7 +1,7 @@
 export function findById(array, idProperty) {
     for (let item of array) {
         if (item.id === idProperty) {
-            return item; // returning full object
+            return item;
         }
     }
 }
