@@ -1,12 +1,12 @@
 import { renderCharacter } from '../render-characters.js';
-import { findById, calcItemTotal, renderTableRow } from '../utils.js';
+import { findById, calcOrderTotal, renderTableRow } from '../utils.js';
 import { addItemToCart, getCart } from '../storage-utils.js';
 
 const test = QUnit.test;
 
 test('Test that passes a product to a function', (expect) => {
 
-    const expected = `<li><h3>Mario</h3><img src="./assets/mario.png" alt="Mario"><span>$99</span><span>Super Mario bros</span><button>BUY ME</button></li>`;
+    const expected = `<li><h3>Mario</h3><img src="./assets/mario.png" alt="Mario"><span>$99</span><span>Super Mario bros</span><button value="mario" class="add">BUY ME</button></li>`;
     
     const mario = {
         id: 'mario',
@@ -48,7 +48,7 @@ test('test for calculation', (expect) => {
         { id: 1, qty: 3 }
     ];
 
-    const actual = calcItemTotal(mario, cart);
+    const actual = calcOrderTotal(mario, cart);
 
     expect.deepEqual(actual, expected);
 });

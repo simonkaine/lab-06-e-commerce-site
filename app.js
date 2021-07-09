@@ -10,8 +10,10 @@ for (let character of characters) {
 }
 
 const addButtons = document.querySelectorAll('.add');
-for (let btn of addButtons) {
-    btn.addEventListener('click', (e) => {
-        addItemToCart(Number(e.target.value));
+
+for (let btn of addButtons) { // HOWS this work?
+    btn.addEventListener('click', (e) => { // Why (e)?
+        const buttonId = Number(e.target.value);
+        addItemToCart(buttonId); // WHAT IS THIS?
     });
 }
