@@ -1,24 +1,58 @@
 import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
 import characters from '../characters.js';
+import { getCart, clearButton } from '../storage-utils.js';
 
 const tableBody = document.getElementById('tb-section01');
+const placeOrderBtn = document.getElementById('place-order');
+placeOrderBtn.disabled = false;
 
-const cart = [
-    { id: 1, qty: 1 },
-    { id: 2, qty: 1 },
-    { id: 3, qty: 1 },
-    { id: 4, qty: 1 },
-    { id: 5, qty: 1 },
-    { id: 6, qty: 1 },
-    { id: 7, qty: 1 }
-];
+function renderCart() {
 
-for (let item of cart) {
-    const character = findById(characters, item.id);
-    const tr = renderTableRow(character, item);
-    tableBody.appendChild(tr);
-} 
+    const cart = getCart();
 
-const totalDom = document.getElementById('order-total');
-const total = calcItemTotal(characters, cart);
-totalDom.textContent = toUSD(total);
+    for (let item of cart) {
+        const character = findById(characters, item.id);
+        const tr = renderTableRow(character, item);
+        tableBody.appendChild(tr);
+    } 
+    if (cart.length === 0){
+        tableBody.innerHTML = '';
+    }
+    
+    const totalDom = document.getElementById('order-total');
+    const total = calcItemTotal(characters, cart);
+
+    if (total <= 0) {
+        placeOrderBtn.disabled = true;
+    }
+    totalDom.textContent = toUSD(total);
+    
+}
+renderCart();
+
+const clearBtn = document.getElementById('clear');
+
+clearBtn.addEventListener('click', () => {
+    clearButton();
+    location.reload();
+});
+
+placeOrderBtn.addEventListener('click', () => {
+    alert('Place order, click OK.');
+    clearButton();
+    window.location.href = '../index.html';
+    
+
+});
+
+
+
+
+
+
+
+
+
+
+
+

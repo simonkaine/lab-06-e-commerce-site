@@ -1,5 +1,6 @@
 import { renderCharacter } from '../render-characters.js';
 import { findById, calcItemTotal, renderTableRow } from '../utils.js';
+import { addItemToCart, getCart } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -72,4 +73,75 @@ test('test for DOM render', (expect) => {
     const actual = dom.outerHTML;
 
     expect.equal(actual, expected);
+});
+
+test('test for cart return the shopping cart from local storage as object', (expect) => {
+    
+    const fakeCart = [
+        { id: 1, qty: 1 },
+        { id: 2, qty: 1 },
+        { id: 3, qty: 1 },
+    ];
+    const fakeCartStorage = JSON.stringify(fakeCart);
+    localStorage.setItem('CART', fakeCartStorage);
+
+    const cart = getCart();
+
+    expect.deepEqual(cart, fakeCart);
+});
+
+test('test for cart empty array', (expect) => {
+    
+    localStorage.removeItem('CART');
+
+    const cart = getCart();
+    const expected = [];
+
+    expect.deepEqual(cart, expected);
+});
+
+test('add Item to update QTY if item already in cart', (expect) => {
+    
+    const fakeCart = [
+        { id: 1, qty: 1 },
+        { id: 2, qty: 1 },
+        { id: 3, qty: 1 },
+    ];
+
+    const fakeCartStorage = JSON.stringify(fakeCart);
+    localStorage.setItem('CART', fakeCartStorage);
+
+    addItemToCart(1); 
+
+    const expected = [
+        { id: 1, qty: 2 },
+        { id: 2, qty: 1 },
+        { id: 3, qty: 1 },
+    ];
+
+    const newCart = getCart();
+
+    expect.deepEqual(newCart, expected);
+});
+
+test('addItem to cart should have an item if its not already there.', (expect) => {
+    
+    const fakeCart = [
+        { id: 1, qty: 1 },
+        { id: 2, qty: 1 }
+    ];
+
+    const fakeCartStorage = JSON.stringify(fakeCart);
+    localStorage.setItem('CART', fakeCartStorage);
+
+    addItemToCart(3); 
+    const newCart = getCart();
+
+    const expected = [
+        { id: 1, qty: 1 },
+        { id: 2, qty: 1 },
+        { id: 3, qty: 1 }
+    ];
+
+    expect.deepEqual(newCart, expected);
 });

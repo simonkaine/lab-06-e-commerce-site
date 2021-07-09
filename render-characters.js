@@ -1,3 +1,5 @@
+import characters from './characters.js';
+
 export function renderCharacter(character) {
     
     const characterLI = document.createElement('li');
@@ -16,13 +18,15 @@ export function renderCharacter(character) {
 
     const button = document.createElement('button');
     button.textContent = 'BUY ME';
+    button.value = character.id;
+    button.classList.add('add');
 
     characterLI.appendChild(characterH3);
     characterLI.appendChild(characterImg);
     characterLI.appendChild(characterSpan);
     characterLI.appendChild(characterCatagory);
     characterLI.appendChild(button);
-
+    
     return characterLI;
 
 }
