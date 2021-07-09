@@ -1,24 +1,24 @@
 import { findById } from './utils.js';
 
-export function getCart() { // What job is this performing again?
+export function getCart() { 
     const stringCart = localStorage.getItem('CART') || '[]';
     const cart = JSON.parse(stringCart);
     return cart;
 }
 
-export function addItemToCart(itemId) { // Go over this whole function..
+export function addItemToCart(itemId) { 
     
     const cart = getCart();
-    const item = findById(cart, itemId); // empty paramter itemID passed through?
+    const item = findById(cart, itemId);
 
     if (item) {
         item.qty += 1;
     } else {
         const newItem = { id: itemId, qty: 1 };
-        cart.push(newItem); // walk through this push.
+        cart.push(newItem); 
     }
 
-    localStorage.setItem('CART', JSON.stringify(cart)); // How's this working again?
+    localStorage.setItem('CART', JSON.stringify(cart)); 
 }
 
 export function clearButton() {

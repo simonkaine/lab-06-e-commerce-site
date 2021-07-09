@@ -11,7 +11,7 @@ function renderCart() {
     const cart = getCart();
 
     for (let item of cart) {
-        const character = findById(characters, item.id); // how to know what parameters to throw in when connected to item booger?
+        const character = findById(characters, item.id);
         const tr = renderTableRow(character, item); 
         tableBody.appendChild(tr);
     } 
