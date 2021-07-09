@@ -1,4 +1,3 @@
-import characters from './characters.js';
 
 export function renderCharacter(character) {
     
