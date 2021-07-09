@@ -15,5 +15,3 @@ for (let btn of addButtons) {
         addItemToCart(Number(e.target.value));
     });
 }
-
-

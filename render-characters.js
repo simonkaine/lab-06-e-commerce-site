@@ -26,7 +26,7 @@ export function renderCharacter(character) {
     characterLI.appendChild(characterSpan);
     characterLI.appendChild(characterCatagory);
     characterLI.appendChild(button);
-
+    
     return characterLI;
 
 }

@@ -1,6 +1,6 @@
 import { findById, calcItemTotal, renderTableRow, toUSD } from '../utils.js';
 import characters from '../characters.js';
-import { getCart, clearButton, addItemToCart } from '../storage-utils.js';
+import { getCart, clearButton } from '../storage-utils.js';
 
 const tableBody = document.getElementById('tb-section01');
 const placeOrderBtn = document.getElementById('place-order');
@@ -31,15 +31,18 @@ function renderCart() {
 renderCart();
 
 const clearBtn = document.getElementById('clear');
+
 clearBtn.addEventListener('click', () => {
     clearButton();
     location.reload();
 });
 
 placeOrderBtn.addEventListener('click', () => {
-    alert('Place order?');
-    window.location.href = '../index.html';
+    alert('Place order, click OK.');
     clearButton();
+    window.location.href = '../index.html';
+    
+
 });
 
 
