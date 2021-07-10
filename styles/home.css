@@ -1,6 +1,10 @@
 /* add home page styles here */
 body {
     background-color: rgb(252, 232, 213);
+    background: url('../assets/cart-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1000px;
 }
 
 #characters {
@@ -17,6 +21,7 @@ body {
     height: 250px;
     padding: 10px;
     margin-right: 10px;
+    box-shadow: white 0px 0px 8px 2px;
 }
 
 #characters li h3{
@@ -40,5 +45,18 @@ body {
 
 header {
     margin: 50px 0 0 725px;
+    
+}
+a {
+    border: solid black 1px;
+    text-decoration: none;
+    color: white;
     font-size: x-large;
+    background-color: gray;
+    padding: 0px 2px 0px 2px;
+    box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.678);
+    margin-left: 500px;
+}
+a:hover {
+    opacity: 50%;
 }
