@@ -4,5 +4,13 @@ header {
 }
 
 main {
-    margin: 200px 200px;
+    padding: 20px;
+    border: solid grey 1px;
+    width: 400px;
+    margin-left: 200px;
+}
+
+table td {
+    text-align: center;
+    padding: 10px;
 }
