@@ -14,3 +14,30 @@ table td {
     text-align: center;
     padding: 10px;
 }
+a {
+    border: solid black 1px;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    padding: 0px 2px 0px 2px;
+}
+a:hover {
+    opacity: 50%;
+}
+button {
+    border: solid black 1px;
+    text-decoration: none;
+    color: white;
+    background-color: gray;
+    padding: 0px 2px 0px 2px;
+    height: 25px;
+}
+button:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+body {
+    background: url('../assets/cart-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
