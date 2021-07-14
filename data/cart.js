@@ -7,13 +7,15 @@ const placeOrderBtn = document.getElementById('place-order');
 placeOrderBtn.disabled = false;
 
 function renderCart() {
-
+    
     const cart = getCart();
-
+    
     for (let item of cart) {
+        
         const character = findById(characters, item.id);
         const tr = renderTableRow(character, item); 
         tableBody.appendChild(tr);
+        
     } 
     if (cart.length === 0){
         tableBody.innerHTML = '';
@@ -21,7 +23,7 @@ function renderCart() {
     
     const totalDom = document.getElementById('order-total');
     const total = calcOrderTotal(characters, cart);
-
+    
     if (total <= 0) {
         placeOrderBtn.disabled = true;
     }
