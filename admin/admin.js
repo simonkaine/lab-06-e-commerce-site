@@ -1,32 +1,28 @@
-import characters from '../characters.js';
 
-// const form = document.getElementById('form');
-export const CHARACTER = 'CHARACTER';
+import { getCharacter, CHARACTER } from '../storage-utils.js';
 
-// grab all the form elements
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-// // create form vairable 
-//     const formData = new FormData(form);
-//     console.log(formData.get('name'));
+const form = document.getElementById('form');
 
-//     const newCharacter = {
-//         id: Number(formData.get('id')),
-//         name: formData.get('name'),
-//         image: formData.get('image'),
-//         description: formData.get('description'),
-//         category: Number(formData.get('category')),
-//         price: Number(formData.get('price'))
-//     };
-//     console.log(newCharacter);
-// });
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-export function getCharacter(){
-    let charStorage = localStorage.getItem(CHARACTER);
-    if (!charStorage) {
-        charStorage = JSON.stringify(characters);
-        localStorage.setItem(CHARACTER, charStorage);
-    }
-    const parsedCharacter = JSON.parse(charStorage);
-    return parsedCharacter;
-}
+    const formData = new FormData(form);
+
+    const newCharacter = {
+        id: Number(formData.get('id')),
+        name: formData.get('name'),
+        image: formData.get('image'),
+        description: formData.get('description'),
+        category: formData.get('category'),
+        price: Number(formData.get('price'))
+    };
+    console.log(newCharacter);
+    const newCharacters = getCharacter();
+    newCharacters.push(newCharacter);
+
+    const stringCharacter = JSON.stringify(newCharacters);
+    localStorage.setItem(CHARACTER, stringCharacter);
+
+    // window.location.replace('../');
+});
+
