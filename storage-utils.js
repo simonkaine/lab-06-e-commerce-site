@@ -1,5 +1,5 @@
 import { findById } from './utils.js';
-import characters from '../characters.js';
+import characters from './characters.js';
 
 export const CHARACTER = 'CHARACTER';
 
