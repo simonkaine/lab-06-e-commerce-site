@@ -23,6 +23,6 @@ form.addEventListener('submit', (e) => {
     const stringCharacter = JSON.stringify(newCharacters);
     localStorage.setItem(CHARACTER, stringCharacter);
 
-    // window.location.replace('../');
+    window.location.replace('../');
 });
 

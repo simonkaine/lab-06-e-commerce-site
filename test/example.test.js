@@ -1,7 +1,7 @@
 import { renderCharacter } from '../render-characters.js';
 import { findById, calcOrderTotal, renderTableRow } from '../utils.js';
-import { addItemToCart, getCart } from '../storage-utils.js';
-import { getCharacter, CHARACTER } from '../admin/admin.js';
+import { addItemToCart, getCart, getCharacter, CHARACTER } from '../storage-utils.js';
+
 
 const test = QUnit.test;
 
