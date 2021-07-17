@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>Admin Page</h1>
+        <a href="../">Home Page</a>
+        <a href="../data">Cart</a>
+    </header>
+
+    <main>
+        <form id="form">
+            <label for="id">
+                ID: <input type="text" name="id">
+            </label>
+            <label for="name">
+                Name: <input name="name" id="name">
+            </label>
+            <label for="image">
+                Image: <input name="image" id="image">
+            </label>
+            <label for="description">
+                Description: <input name="description" id="description">
+            </label>
+            <label for="category">
+                Category: <select name="category" id="category">
+                    <option value="Mortal Kombat">Mortal Kombat</option>
+                    <option value="Super Mario Bros">Super Mario Bros</option>
+                    <option value="Earthworm Jim">Earthworm Jim</option>
+                    <option value="Donkey Kong">Donkey Kong</option>
+                    <option value="Star Trek">Star Trek</option>
+                </select>
+            </label>
+            <label for="price">
+                Price: <input name="price" id="price">
+            </label>
+            <button type="submit">Add!</button>
+        </form>
+    </main>
+
+    <script src="admin.js" type="module"></script>
+</body>
+</html>

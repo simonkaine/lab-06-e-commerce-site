@@ -1,6 +1,7 @@
 import { renderCharacter } from '../render-characters.js';
 import { findById, calcOrderTotal, renderTableRow } from '../utils.js';
 import { addItemToCart, getCart } from '../storage-utils.js';
+import { getCharacter, CHARACTER } from '../admin/admin.js';
 
 const test = QUnit.test;
 
@@ -144,4 +145,19 @@ test('addItem to cart should have an item if its not already there.', (expect) =
     ];
 
     expect.deepEqual(newCart, expected);
+});
+
+test('getCharacter function returns list of products from Local Storage', (expect) => {
+    
+    const fakeCart = [
+        { id: 1, name: 'Mario' },
+        { id: 2, name: 'Data' }
+    ];
+
+    const fakeCartStorage = JSON.stringify(fakeCart);
+    localStorage.setItem(CHARACTER, fakeCartStorage);
+
+    const actual = getCharacter();
+
+    expect.deepEqual(fakeCart, actual);
 });

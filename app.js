@@ -1,8 +1,10 @@
-import characters from './characters.js';
+
 import { renderCharacter } from './render-characters.js';
-import { addItemToCart } from './storage-utils.js';
+import { addItemToCart, getCharacter } from './storage-utils.js';
 
 const charactersUL = document.getElementById('characters');
+
+let characters = getCharacter();
 
 for (let character of characters) {
     const characterLI = renderCharacter(character);
